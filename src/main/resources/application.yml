@@ -1,0 +1,24 @@
+spring:
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: myservice
+#          uri: ${MYSERVICE_ROUTE_URI:http://localhost:6204}
+#          predicates:
+#            - Path=/test
+#          filters:
+#            - PrefixPath=/api
+#            - AddResponseHeader=X-Powered-By,Young Gateway
+  jackson: # actuator result with pretty json
+    serialization:
+      indent_output: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    gateway:
+      enabled: true
